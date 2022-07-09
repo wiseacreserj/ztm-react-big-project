@@ -6,18 +6,6 @@ import {
 } from "./category.action";
 import { CATEGORIES_ACTION_TYPES } from "./category.types";
 
-/* export const fetchCategoriesStartAsync = () => {
-    return async (dispatch) => {
-        dispatch(fetchCategoriesStart());
-        try {
-            const categoriesArray = await getCategoriesAndDocs("categories");
-            dispatch(fetchCategoriesSuccess(categoriesArray));
-        } catch (error) {
-            dispatch(fetchCategoriesFailure(error));
-        }
-    };
-};
- */
 export function* fetchCategoriesAsync() {
     try {
         const categoriesArray = yield call(getCategoriesAndDocs, "categories");
